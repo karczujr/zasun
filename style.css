@@ -7,7 +7,6 @@
 
 *:focus {
     outline: 2px solid #5995ED;
-    outline: 2px solid #000;
     border-radius: 2px;
 
 }
@@ -182,15 +181,18 @@ ul {
     display: none;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 24px));
+    grid-gap: 48px;
+}
+
 /* Header */
 
 header {
     width: 100%;
     height: 75vh;
     align-items: center;
-    display: grid;
-    grid-template-columns: repeat(2, calc(50% - 24px));
-    grid-gap: 48px;
     justify-content: baseline;
     background-size: cover;
     background-position-x: center;
@@ -238,12 +240,7 @@ header img {
 /* About */
 
 .about-section {
-    display: grid;
-    grid-gap: 48px;
-    grid-template-columns: repeat(2, calc(50% - 24px));
-    text-align: left;
-
-    
+    text-align: left; 
 }
 
 .about-section .about-information {
@@ -298,9 +295,6 @@ header img {
 /* Contact */
 
 .contact-section {
-    display: grid;
-    grid-gap: 48px;
-    grid-template-columns: repeat(2, calc(50% - 24px));
     text-align: left;
     align-items: center;
     margin: 104px 0;
@@ -404,22 +398,53 @@ footer a:hover::after {
 }
 
 
+@media (max-width: 1366px) {
+    h1 {
+        font-size: 4.5em;
+    }
+    
+    h2 {
+        font-size: 3em;    
+    }
+    
+    .large-body {
+        font-size: 1.25em;
+       
+    }
+    
+    .small-body {
+        font-size: 1em;
+       
+    }
+    }
 
 
 @media (max-width: 960px) {
     
     h1 {
-        font-size: 64px;
+        font-size: 4em;
     }
 
     h2 {
-        font-size: 40px;
+        font-size: 2.5em;
         padding-bottom: 40px;
     }
     
-    header {
+  
+
+    .grid {
         grid-template-columns: 1fr;
-        grid-gap: 48px;
+        width: auto;
+        
+    }
+
+    .large-body {
+        padding-bottom: 24px;
+    }
+
+    header {
+        height: auto;
+        padding: 64px 0;
     }
 
     header img {
@@ -428,13 +453,11 @@ footer a:hover::after {
 
     .header-section {
         order: 2;
+        max-width: none;
     }
 
-    .about-section {
-        grid-template-columns: 1fr;
-        width: auto;
     
-    }
+    
 
     .about-section .about-information {
         margin-block: 40px 0;
@@ -450,7 +473,7 @@ footer a:hover::after {
     }
 
     .types-of-services {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, calc(50% - 24px));
         grid-gap: 48px;
     }
 
@@ -464,6 +487,85 @@ footer a:hover::after {
     }
 
     .contact-section {
+     margin: 64px 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        width: calc(100vw - 32px);
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+        padding-bottom: 24px;
+    }
+
+    .large-body {
+        font-size: 1.25em;
+    }
+
+    .about-section {
+        grid-gap: 32px;
+
+    }
+
+    .about-section .img-about-container {
+        width: 100%;
+        margin: none;
+    }
+
+    .services-section {
+        margin: 64px 0;
+    }
+
+    .services-information {
+        padding-top: 24px;
+    }
+
+    .types-of-services {
         grid-template-columns: 1fr;
+        grid-gap: 48px;
+    }
+
+    .types-of-services img {
+        height: 200px;
+    }
+
+    .contact-section {
+        margin: 64px 0;
+    }
+    .contact-section .contact-information {
+        padding: 24px 0;
+    }
+
+    .contact-section label {
+        font-size: 1em;
+        color: #4a4a4a;
+    }
+    
+    .contact-section .contact-font {
+        font-size: 1.5em;
+    }
+
+    .phone-number-wraper {
+        margin-top: 16px;
+    }
+
+    .e-mail-wraper {
+        margin-top: 16px;
+    }
+
+    footer p {
+        font-size: 1em;
+    }
+
+    footer img {
+        height: 12px;
     }
 }
